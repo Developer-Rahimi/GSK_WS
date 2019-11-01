@@ -25,6 +25,7 @@ namespace wherapp_gsk.Services
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<Address> addresses { get; set; }
         public DbSet<Specification> Specifications { get; set; }
         public DbSet<SubSpecification> SubSpecifications { get; set; }
         public DbSet<Contact> contacts { get; set; }

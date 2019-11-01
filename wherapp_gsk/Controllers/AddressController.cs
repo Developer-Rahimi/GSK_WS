@@ -13,9 +13,9 @@ namespace wherapp_gsk.Controllers
         private DatabaseContext db = new DatabaseContext();
         public HttpResponseMessage Get()
         {
-            //var Carts = db.Carts.Include(x => x.Content).ToList();
+            var data = db.addresses.ToList();
             /* .Include(x => x.User)*/
-            return Request.CreateResponse(HttpStatusCode.OK, "Ok");
+            return Request.CreateResponse(HttpStatusCode.OK, data);
         }
     }
 }

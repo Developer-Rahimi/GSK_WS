@@ -5,7 +5,7 @@ using System.Web;
 
 namespace wherapp_gsk.Models
 {
-    public class Addresses
+    public class Address
     {
         public int AddressID { get; set; }
         public User user { get; set; }
