@@ -135,6 +135,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AddressController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
