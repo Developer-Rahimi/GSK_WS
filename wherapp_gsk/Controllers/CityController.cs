@@ -14,7 +14,7 @@ namespace wherapp_gsk.Controllers
         private DatabaseContext db = new DatabaseContext();
         public HttpResponseMessage Get(int index)
         {
-            var data = db.States.Where(x=>x.StateID==index).ToList();
+            var data = db.Cities.Where(x=>x.StateID==index).ToList();
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
         public HttpResponseMessage Post([FromBody] City city)

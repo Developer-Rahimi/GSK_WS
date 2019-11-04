@@ -8,7 +8,7 @@ using wherapp_gsk.Services;
 
 namespace wherapp_gsk.Controllers
 {
-    public class SteteController : ApiController
+    public class StateController : ApiController
     {
         private DatabaseContext db = new DatabaseContext();
         public HttpResponseMessage Get()
