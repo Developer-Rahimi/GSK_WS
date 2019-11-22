@@ -12,13 +12,16 @@ namespace wherapp_gsk.Controllers
     public class ProductController : ApiController
     {
         private DatabaseContext db = new DatabaseContext();
-
+        public HttpResponseMessage Get()
+        {
+            var data = db.Products.ToList();
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
         public HttpResponseMessage Post([FromBody] Product product)
         {
             Result result = new Result();
             try
             {
-                product.ProductReview = 0;
                 product.CategoryID = 1;
                 db.Products.Add(product);
                 db.SaveChanges();
