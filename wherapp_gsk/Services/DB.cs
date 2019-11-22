@@ -29,6 +29,7 @@ namespace wherapp_gsk.Services
         public DbSet<Specification> Specifications { get; set; }
         public DbSet<SubSpecification> SubSpecifications { get; set; }
         public DbSet<Contact> contacts { get; set; }
+        public DbSet<Store> stores { get; set; }
         public DatabaseContext() : base("SystemDbContext") { }
         protected override void OnModelCreating(DbModelBuilder builder)
         {
