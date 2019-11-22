@@ -8,7 +8,7 @@ namespace wherapp_gsk.Models
   
     public class Category
     {
-        public int id { get; set; }
+        public int CategoryID { get; set; }
         public String CategoryName { get; set; }
     }
 }

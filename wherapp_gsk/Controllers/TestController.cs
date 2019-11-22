@@ -14,7 +14,7 @@ namespace wherapp_gsk.Controllers
     public class TestController : ApiController
     {
         private DatabaseContext db = new DatabaseContext();
-        public HttpResponseMessage Get()
+        /*public HttpResponseMessage Get()
         {
             //var db = new ApplicationDBContext();
             var Contents = db.Products.Include(x=>x.Category).ToList();
@@ -28,6 +28,6 @@ namespace wherapp_gsk.Controllers
             Result result = new Result();
             result.Status = "OK";
             return Request.CreateResponse(HttpStatusCode.OK, result);
-        }
+        }*/
     }
 }
