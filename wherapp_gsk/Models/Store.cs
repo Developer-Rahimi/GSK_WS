@@ -8,7 +8,7 @@ namespace wherapp_gsk.Models
     public class Store
     {
         public int StoreID { get; set; }
-
+        public virtual Product Product { get; set; }
         public int ProductID { get; set; }
 
         public int Quantity { get; set; }
