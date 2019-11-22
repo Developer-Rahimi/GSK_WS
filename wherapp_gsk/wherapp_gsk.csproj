@@ -148,6 +148,7 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SpecificationController.cs" />
     <Compile Include="Controllers\StateController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\SubSpecificationController.cs" />
     <Compile Include="Controllers\TagController.cs" />
     <Compile Include="Controllers\TestController.cs" />
