@@ -6,10 +6,10 @@ using System.Web;
 namespace wherapp_gsk.Models
 {
 
-    public class Carts
+    public class Cart
     {
         public int CartID { get; set; }
-
+        public virtual Product Product { get; set; }
         public int ProductID { get; set; }
 
         public int UserID { get; set; }

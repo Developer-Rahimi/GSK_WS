@@ -13,6 +13,7 @@ namespace wherapp_gsk.Models
         public int UserID { get; set; }
         public string OrderCode { get; set; }
         public bool Pay { get; set; }
+        public int? AddressID { get; set; }
         public DateTime Date { get; set; }
         public DateTime? DatePay { get; set; }
     }

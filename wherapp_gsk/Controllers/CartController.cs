@@ -14,15 +14,14 @@ namespace wherapp_gsk.Controllers
         private DatabaseContext db = new DatabaseContext();
         public HttpResponseMessage Get()
         {
-            var Carts = db.Carts.Include(x => x.Content).ToList();
-           /* .Include(x => x.User)*/
+            var Carts = db.Carts.Include(x => x.Product).ToList();
             return Request.CreateResponse(HttpStatusCode.OK, Carts);
         }/*.Include(x => x.Carts.Select(w => w.Content.Products))*/
         public HttpResponseMessage Get(int index)
         {
-            //var dsd =db.Orders.Where(e=>e.UserID== index &e.Pay==false).Include(x => x.Carts).Include(x => x.Carts.Select(w=>w.Content)).ToList();
+           var data =db.Orders.Where(e=>e.UserID== index &e.Pay==false).Include(x => x.Carts).Include(x => x.Carts.Select(w=>w.Product)).ToList();
             /* .Include(x => x.User)*/
-            return Request.CreateResponse(HttpStatusCode.OK, "sdsd");
+            return Request.CreateResponse(HttpStatusCode.OK, data);
         }
         public HttpResponseMessage Post([FromBody] Cart cart)
         {
@@ -40,7 +39,7 @@ namespace wherapp_gsk.Controllers
                order = db.Orders.FirstOrDefault(x => x.UserID == cart.UserID & x.Pay == false);
             }else
             {
-                var temp = db.Carts.FirstOrDefault(x => x.UserID == cart.UserID & x.OrderID == order.OrderID &x.ContentID==cart.ContentID);
+                var temp = db.Carts.FirstOrDefault(x => x.UserID == cart.UserID & x.OrderID == order.OrderID &x.ProductID==cart.ProductID);
                 if(temp == null)
                 {
                     cart.OrderID = order.OrderID;
