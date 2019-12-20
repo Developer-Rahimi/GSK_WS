@@ -8,13 +8,13 @@ namespace wherapp_gsk.Models
     public class Address
     {
         public int AddressID { get; set; }
-        public User user { get; set; }
+        public User User { get; set; }
         public int? UserID { get; set; }
 
         public string AddressName { get; set; }
-        public State state  { get; set; }
+        public State State  { get; set; }
         public int? StateID { get; set; }
-        public City city { get; set; }
+        public City City { get; set; }
         public int? CityID { get; set; }
 
         public string Street { get; set; }

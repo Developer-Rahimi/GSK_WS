@@ -18,7 +18,7 @@ namespace wherapp_gsk.Controllers
         public HttpResponseMessage Get()
         {
 
-            var c = db.Contents.Include(x=>x.Images).Include(x => x.Products).OrderByDescending(e=>e.ContentID)
+            var c = db.Contents.Include(e=>e.Images).OrderByDescending(e=>e.ContentID)
                 .ToList();
 
             return Request.CreateResponse(HttpStatusCode.OK, c);
@@ -27,8 +27,8 @@ namespace wherapp_gsk.Controllers
         {
 
             var c = db.Contents.Where(e => e.ContentID == index).Include(x => x.Images)
-                .Include(x => x.Products).Include(x => x.Comments).Include(x => x.Specifications).Include(x => x.Specifications.Select(w=>w.SubSpecifications))
-                .Include(x => x.Tags).Include(x => x.Introductions).ToList();
+               .Include(x => x.Comments).Include(x => x.Specifications).Include(x => x.Specifications.Select(w=>w.SubSpecifications))
+                .Include(x => x.Tags).Include(x => x.Introductions).Include(x => x.Product.Stores).ToList();
 
             return Request.CreateResponse(HttpStatusCode.OK, c[0]);
         }

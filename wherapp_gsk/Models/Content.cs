@@ -8,6 +8,8 @@ namespace wherapp_gsk.Models
     public class Content
     {
         public long ContentID { get; set; }
+        public virtual Product Product { get; set; }
+        public int ProductID { get; set; }
         public virtual User User { get; set; }
         public int UserID { get; set; }
         public string ContentName  { get; set; }
@@ -19,7 +21,6 @@ namespace wherapp_gsk.Models
         public int  ContentStatusID { get; set; }
         public ICollection<Image> Images { get; set; }
         public ICollection<Introduction> Introductions { get; set; }
-        public ICollection<Product> Products { get; set; }
         public ICollection<Comment> Comments { get; set; }
         public ICollection<Specification> Specifications { get; set; }
         public ICollection<Tag> Tags { get; set; }

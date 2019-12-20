@@ -22,7 +22,6 @@ namespace wherapp_gsk.Controllers
             Result result = new Result();
             try
             {
-                product.CategoryID = 1;
                 db.Products.Add(product);
                 db.SaveChanges();
                 result.Status = "OK";

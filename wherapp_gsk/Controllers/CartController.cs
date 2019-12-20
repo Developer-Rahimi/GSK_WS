@@ -17,12 +17,12 @@ namespace wherapp_gsk.Controllers
             var Carts = db.Carts.Include(x => x.Content).ToList();
            /* .Include(x => x.User)*/
             return Request.CreateResponse(HttpStatusCode.OK, Carts);
-        }
+        }/*.Include(x => x.Carts.Select(w => w.Content.Products))*/
         public HttpResponseMessage Get(int index)
         {
-            var Carts = db.Orders.Where(e=>e.UserID== index &e.Pay==false).Include(x => x.Carts).Include(x => x.Carts.Select(w=>w.Content)).Include(x => x.Carts.Select(w => w.Content.Products)).ToList();
+            //var dsd =db.Orders.Where(e=>e.UserID== index &e.Pay==false).Include(x => x.Carts).Include(x => x.Carts.Select(w=>w.Content)).ToList();
             /* .Include(x => x.User)*/
-            return Request.CreateResponse(HttpStatusCode.OK, Carts);
+            return Request.CreateResponse(HttpStatusCode.OK, "sdsd");
         }
         public HttpResponseMessage Post([FromBody] Cart cart)
         {

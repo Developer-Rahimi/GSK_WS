@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Data.Entity;
 using System.Net.Http;
 using System.Web.Http;
 using wherapp_gsk.Models;
@@ -14,8 +15,14 @@ namespace wherapp_gsk.Controllers
         private DatabaseContext db = new DatabaseContext();
         public HttpResponseMessage Get()
         {
-            var data = db.addresses.ToList();
-            /* .Include(x => x.User)*/
+            var data = db.addresses.Include(x => x.User).Include(x => x.State).Include(x => x.City).ToList();
+            /* */
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
+        public HttpResponseMessage Get(int UserID)
+        {
+            var data = db.addresses.Include(x => x.User).Include(x => x.State).Include(x => x.City).Where(x=>x.UserID== UserID).ToList();
+            /* */
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
         public HttpResponseMessage Post([FromBody] Address address)
